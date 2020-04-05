@@ -1,0 +1,20 @@
+{
+  "name": "euroservervision",
+  "version": "1.0.0",
+  "description": "Not Eurovision Voting System Server",
+  "main": "server.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlaltdev/euroservervision.git"
+  },
+  "author": "Yorick <yorick@ctrlalt.dev>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ctrlaltdev/euroservervision/issues"
+  },
+  "homepage": "https://github.com/ctrlaltdev/euroservervision#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
