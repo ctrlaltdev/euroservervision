@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Not Eurovision Voting System Server",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ctrlaltdev/euroservervision.git"
@@ -15,6 +17,13 @@
   },
   "homepage": "https://github.com/ctrlaltdev/euroservervision#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "sqlite3": "^4.1.1",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
