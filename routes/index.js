@@ -15,7 +15,6 @@ const sendUpdate = (msg) => {
 }
 
 router.get('/', (req, res) => {
-    console.info(req)
     res.send('Not Eurovision Voting System Server')
 })
 
