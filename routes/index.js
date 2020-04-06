@@ -2,7 +2,9 @@ const router = require('express').Router()
 const { v4: uuidv4 } = require('uuid')
 
 const state = {
-    country: 'France'
+    started: false,
+    year: new Date().getFullYear(),
+    country: null
 }
 const clients = {}
 
@@ -19,17 +21,19 @@ router.get('/', (req, res) => {
 })
 
 router.get('/info', (req, res) => {
-    res.json({ started: false, year: new Date().getFullYear() })
+    const { started, year } = state
+    res.json({ started, year })
 })
 
 router.get('/current', (req, res) => {
-    res.json({ country: state.country })
+    const { country } = state
+    res.json({ country })
 })
 
 router.post('/current', (req, res) => {
     const keys = Object.keys(req.body)
     for (let k = 0 ; k < keys.length ; k++) {
-        if (state[keys[k]]) {
+        if (keys[k] in state) {
             state[keys[k]] = req.body[keys[k]]
         }
     }
@@ -51,7 +55,7 @@ router.get('/current/stream', (req, res) => {
    clients[uuid] = res
    console.info(`New client: ${uuid}`)
 
-   res.write(`data: ${JSON.stringify({ country: state.country })}\n\n`)
+   res.write(`data: ${JSON.stringify(state)}\n\n`)
 
    req.on('close', () => {
        console.info(`Client disconnected: ${uuid}`)
