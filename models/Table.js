@@ -21,8 +21,8 @@ class Table {
     }
     const cols = this.serializedSchema()
     db.run(`CREATE TABLE IF NOT EXISTS ${this.name} (${cols})`, e => { if (e) throw e })
-    db.close(e => { if (e) throw e })
   }
+
 }
 
 module.exports = Table
